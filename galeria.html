@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- PERMITE AJUSTAR AL TAMAÑO DE PANTALLA DEL APARATO CON EL QUE SE VE LA WEB -->
+    <link rel="stylesheet" href="css/estilo.css"> <!-- HOJA DE ESTILOS CONECTADA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- CDN DE GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- TIPOGRAFÍAS LINKEADAS DE GOOGLE FONTS -->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"> <!-- LINKEADO FAV ICONO  -->
+    <title>Galeria- Pink Floyd</title> <!-- TÍTULO DE LA INTERNA GALERIA  -->
+</head>
+<body>
+    <header class="interna"> <!-- HEADER CON NAVEGADOR DESPLEGABLE PARA PÁGINAS INTERNAS  -->
+        <a href="index.html" class="logo"><img src="img/Pink_Floyd_logo.png" alt="Logo Pink Floyd"></a>
+        <button class="abrir-menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+        <nav>
+            <button class="cerrar-menu">X</button>
+            <ul>
+                <li><a href="biografia.html">BIOGRAFÍA</a></li>
+                <li><a href="discografia.html">DISCOGRAFÍA</a></li>
+                <li><a href="galeria.html">GALERÍA</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contenedor-galeria"> <!-- CONTENEDOR DE LA GALERÍA TRABAJADO CON GRID  -->
+        <section class="galeria">
+            <a href="img/01.png"><img src="img/01tn.png" alt="foto 1"></a>
+            <a href="img/02.png"><img src="img/02tn.png" alt="foto 2"></a>
+            <a href="img/03.png"><img src="img/03tn.png" alt="foto 3"></a>
+            <a href="img/04.png"><img src="img/04tn.png" alt="foto 4"></a>
+            <a href="img/05.png"><img src="img/05tn.png" alt="foto 5"></a>
+            <a href="img/06.png"><img src="img/06tn.png" alt="foto 6"></a>
+            <a href="img/07.png"><img src="img/07tn.png" alt="foto 7"></a>
+            <a href="img/08.png"><img src="img/08tn.png" alt="foto 8"></a>
+            <a href="img/09.png"><img src="img/09tn.png" alt="foto 9"></a>
+        </section>
+        <div class="modal"> <!-- MODAL QUE SE ACTIVA CON UNA FUNCIÓN DE .JS PERMITE NAVEGAR ENTRE IMÁGENES A FULLSCREEN  -->
+            <button>&lt;</button>
+            <img src="img/01.png">
+            <button>&gt;</button>
+        </div>
+    </div>
+    <script src="js/funciones.js"></script>
+</body>
+</html>

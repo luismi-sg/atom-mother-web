@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- PERMITE AJUSTAR AL TAMAÑO DE PANTALLA DEL APARATO CON EL QUE SE VE LA WEB -->
+    <link rel="stylesheet" href="css/estilo.css"> <!-- HOJA DE ESTILOS CONECTADA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- CDN DE GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- TIPOGRAFÍAS LINKEADAS DE GOOGLE FONTS -->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"> <!-- LINKEADO FAV ICONO  -->
+    <title>ATOM MOTHER WEB - Pink Floyd</title> <!-- TITULO DE MI PROYECTO -->
+</head>
+<body>
+    <div class="principal"> <!-- CONTENEDOR DE LA PÁGINA PRINCIPAL -->
+        <header> 
+            <a href="index.html" class="logo"> <!-- LOGO QUE VARIA DE IMAGEN SEGÚN TAMAÑO RESPONSIVE  -->
+                <picture> 
+                    <source media="screen and (max-width:600px)" srcset="img/Logo-central-V2.png">
+                    <img src="img/Pink_Floyd_logo.png" alt="Logo Pink Floyd">
+                </picture>
+            </a>
+            <h1><span>PINK FLOYD</span></h1> <!-- TÍTULO PRINCIPAL -->
+        </header>
+        <nav> <!-- NAVEGADOR CON TRES ELEMENTOS QUE CAMBIA DE ORIENTACIÓN SEGÚN RESPONSIVE -->
+            <ul>
+                <li><a href="biografia.html"><span>BIOGRAFÍA</span></a></li>
+                <li><a href="discografia.html"><span>DISCOGRAFÍA</span></a></li>
+                <li><a href="galeria.html"><span>GALERÍA</span></a></li>
+            </ul>
+        </nav>
+        <section class="entrada"> <!-- BARRAS DE COLORES EN LA ANIMACIÓN DE ENTRADA DE LA PÁGINA -->
+            <div class="barra-color"></div>
+            <div class="barra-color"></div>
+            <div class="barra-color"></div>
+            <div class="barra-color"></div>
+            <div class="barra-color"></div>
+            <div class="barra-color"></div>
+            <div class="barra-color"></div>
+        </section>
+    </div>
+    <script src="js/funciones.js"></script> <!-- FUNCIONES JAVASCRIPTS DE LA FUENTE .JS-->
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- PERMITE AJUSTAR AL TAMAÑO DE PANTALLA DEL APARATO CON EL QUE SE VE LA WEB -->
+    <link rel="stylesheet" href="css/estilo.css"> <!-- HOJA DE ESTILOS CONECTADA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- CDN DE GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- TIPOGRAFÍAS LINKEADAS DE GOOGLE FONTS -->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"> <!-- LINKEADO FAV ICONO  -->
+    <title>Biografía- Pink Floyd</title> <!-- TÍTULO DE LA INTERNA BIOGRAFÍA  -->
+</head>
+<body>
+    <header class="interna"> <!-- HEADER CON NAVEGADOR DESPLEGABLE PARA PÁGINAS INTERNAS  -->
+        <a href="index.html" class="logo"><img src="img/Pink_Floyd_logo.png" alt="Logo Pink Floyd"></a>
+        <button class="abrir-menu"> <!-- BOTON PARA ABRIR EL MENÚ, FUNCIÓN CON .JS  -->
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+        <nav>
+            <button class="cerrar-menu">X</button> <!-- BOTON PARA CERRAR EL MENÚ, FUNCIÓN CON .JS  -->
+            <ul>
+                <li><a href="biografia.html">BIOGRAFÍA</a></li>
+                <li><a href="discografia.html">DISCOGRAFÍA</a></li>
+                <li><a href="galeria.html">GALERÍA</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contenedor-biografia"> <!-- BOTON PARA ABRIR EN MENÚ, FUNCIÓN CON .JS  -->
+        <div class="navegar-bio"> <!-- NAVEGADOR DENTRO DE LA BIOGRAFÍA PERMITE SALTAR DE SECCIÓN EN SECCIÓN  -->
+            <ul>
+                <li><a href="#bio-uno">1</a></li>
+                <li><a href="#bio-dos">2</a></li>
+                <li><a href="#bio-tres">3</a></li>
+                <li><a href="#bio-cuatro">4</a></li>
+            </ul>
+        </div>
+        <section id="bio-uno"> <!-- SECCIONES DE LA BIO  -->
+            <p>Pink Floyd fue una banda de rock británica, fundada en Londres en 1965. Considerada un ícono cultural del siglo XX y una de las bandas más influyentes, exitosas y aclamadas en la historia de la música popular, obtuvo gran popularidad dentro del circuito underground gracias a su música psicodélica y espacial, que con el paso del tiempo evolucionó hacia el rock progresivo y el rock sinfónico adquiriendo la popularidad con la que hoy son recordados. <span>Es conocida por sus canciones de alto contenido filosófico, a veces de crítica política, junto a la experimentación sonora, las innovadoras portadas de sus discos y sus elaborados espectáculos en vivo.</span> Sus ventas sobrepasan los 280 millones de álbumes vendidos en todo el mundo,  97,5 millones de ellos solamente en los Estados Unidos, convirtiéndose en una de las bandas con más ventas en la historia.</p>
+        </section>
+        <section id="bio-dos"> <!-- SECCIONES DE LA BIO  -->
+            <picture> 
+                <source media="screen and (max-width:800px)" srcset="img/bio-picture2.jpg">
+                <img src="img/bio-picture2.jpg">
+            </picture>
+            <p>Inicialmente el grupo estaba formado por el batería Nick Mason, el tecladista y vocalista Richard Wright, el bajista y vocalista Roger Waters y el guitarrista y vocalista principal Syd Barrett, quien se convirtió en el primer líder de la banda tras el efímero paso de Bob Klose, que no llegó a aparecer en ningún disco. El errático e impredecible comportamiento de Barrett, causado por el excesivo consumo de drogas (especialmente LSD), hizo que en diciembre de 1967 su amigo David Gilmour se incorporara al grupo. Unos meses después, Barrett abandonó, y con el cuarteto formado por Mason, Wright, Waters y Gilmour quedó establecida la formación definitiva del grupo.</p>
+        </section>
+        <section id="bio-tres"> <!-- SECCIONES DE LA BIO  -->
+            <p>En noviembre de 2014 salió a la venta The Endless River, el último disco de estudio de la banda, que contiene sobre todo material grabado durante las sesiones de grabación de The Division Bell entre 1993 y 1994, y sin aportación alguna de Roger Waters.</p>
+        </section>
+        <section id="bio-cuatro"> <!-- SECCIONES DE LA BIO  -->
+            <h3><span>En una encuesta realizada por el programa británico de radio Planet Rock en 2005, Pink Floyd fue elegida como la «mejor banda de rock de todos los tiempos».</span></h3>
+        </section>
+                
+    </div>
+    <script src="js/funciones.js"></script> <!-- FUNCIONES JAVASCRIPTS DE LA FUENTE .JS-->
+</body>
+</html>

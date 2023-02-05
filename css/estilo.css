@@ -1,0 +1,1056 @@
+*{ /*Configuración inicial*/
+    margin: 0;
+    padding: 0;
+}
+html,body{
+	scroll-behavior: smooth; /*Usado para la navegación dentro de la biografía*/
+}
+body{
+    font-family: 'Space Grotesk', sans-serif; /*Tipografía para textos y menú interno*/
+    font-weight: 400;
+    min-width: 320px; /*Después de esta medida mínima se rompe la web*/
+    background-color: #111111;
+}
+h1{
+    font-family: 'Rubik 80s Fade', cursive; /*Tipografía para títulos y menú principal*/
+    font-weight: 400;
+    font-size: 2.6em;
+    display: block; /*Para que el título funcione como una caja*/
+    background-size: cover;
+    background-image: linear-gradient(to right, #8100cc, #1e4ebd, #1a83ff, #00bb6e, #fef200, #ff8800, #ff0012); /*Efecto arcoiris*/
+    background-color: white;
+    padding: 0px;
+}
+h1 span{
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #000;
+    mix-blend-mode:darken; /*Efecto arcoiris*/
+}
+header{
+	position: fixed; /*Cabecera que se mantiene fija en toda la web*/
+    display: flex; 
+    width: calc(100% - 40px);
+	top: 0;
+	left: 0;
+	z-index: 1; /*Por encima de todo el contenido*/
+	padding: 20px;
+    background-color: black;
+}
+header .logo{
+    width: 48px;
+    margin-right: 20px;
+    filter: grayscale(100%); /*Efecto blanco y negro*/   
+    transition: filter 1.5s; /*Efecto blanco y negro*/
+}
+header .logo:hover{
+    filter: grayscale(0%);  /*Efecto blanco y negro*/
+}
+header img{ /*Configuración de imagenes en la cabecera*/
+    display: block; 
+    width: 100%;
+}
+.principal{
+    margin: 0 auto;
+    max-width: 150em;
+    
+}
+.principal nav{
+    height: 100vh; /*Alto total de la pantalla*/
+    background-color: #111111;
+    display: flex; /*El navegador centrado en la pantalla*/
+    justify-content: center; /*El navegador centrado en la pantalla*/
+    align-items: center; /*El navegador centrado en la pantalla*/
+}
+.principal nav ul{
+    display: flex; /*Los elementos del navegador van en fila y alineados al centro del nav*/
+    align-items: center;
+    background: url('../img/Logo-central-V2.png') no-repeat center; /*Fondo inicial para pantallas grandes*/
+	background-size: 60%;
+    width: 100%;
+	list-style: none;
+    padding: 100px 30px 30px 30px;
+}
+.principal nav ul li{
+	flex-grow: 1; /*Los elementos ocupan todo el espacio necesario dentro del nav*/
+}
+.principal nav a{
+    position: relative; /*Relativo para que los SPAN floten dentro de los elemento a*/
+    display: block;
+    text-decoration: none;
+    min-height: 800px;
+    font-family: 'Rubik 80s Fade', cursive;
+	font-size: 3.5em;
+	color: transparent;
+    opacity: 0;
+    transition: opacity 2s, color 1.2s; /*Transicion de opacidad*/ 
+}
+.principal nav a:hover{ /*Efectos las hacer HOVER en los elementos del nav*/
+    opacity: 1;
+    color: white;
+    background: url('../img/pink-floyd-scaled.jpg') no-repeat; /*Todos llevan la misma imagen intencionalmente*/
+    mix-blend-mode: screen; /*Efecto con el fondo multicolor*/
+}
+.principal nav span{
+	position: absolute; /*Flotan dentro del elemento a*/
+    text-shadow: 4px 4px 3px rgba(0, 0, 0,.9); /*Sombra para contraste*/
+	right: 40px;
+	bottom: 40px;
+}
+.principal nav li:first-child a{
+    border-radius: 10px 0px 0px 10px;
+}
+.principal nav li:first-child a:hover{
+    background-position: left; /*Posicion intencional de cada fondo en los elementos a*/
+}
+.principal nav li:nth-child(2) a:hover{
+    background-position: center; /*Posicion intencional de cada fondo en los elementos a*/
+}
+.principal nav li:last-child a{
+    border-radius: 0px 10px 10px 0px;
+}
+.principal nav li:last-child a:hover{
+    background-position: right; /*Posicion intencional de cada fondo en los elementos a*/
+}
+
+/* EFECTO DE ENTRADA CON BARRAS DE COLORES */
+.entrada{
+    position: absolute; /*Ubicada en el inicio de toda la pantalla*/
+    z-index: 1; /*Va por encima de toda la pantalla*/
+    top: 0;
+    left: 0;
+    height: 100vh; /*Ocupan toda la pantalla*/
+    width: 100%; /*Ocupan toda la pantalla*/
+    display: flex;
+    flex-direction: row; /*En desktop la animación de las barras es en forma horizontal*/
+    justify-content: center;
+    animation: movimiento .5s ; /*Animación de movimiento final*/
+    animation-delay: 3.8s;
+    animation-fill-mode: forwards; /*Se mantiene el último fotograma de la animación*/ 
+}
+.entrada .barra-color{
+    width: calc(100% / 7); /*Dividos en 7 espacios igual para 7 colores distintos*/
+    position: relative; 
+    animation: movimiento 2s ease-in-out; 
+    animation-fill-mode: forwards;  /*Se mantiene el último fotograma de la animación*/
+}
+.barra-color:nth-child(1){ /*7 colores distintos y diferentes tiempos de entrada*/
+    background-color: #8100cc;
+    animation-delay: 0s;
+}
+.barra-color:nth-child(2){ 
+    background-color: #1e4ebd;
+    animation-delay: 0.3s;
+}
+.barra-color:nth-child(3){
+    background-color: #1a83ff;
+    animation-delay: 0.6s;
+}
+.barra-color:nth-child(4){
+    background-color: #00bb6e;
+    animation-delay: 0.9s;
+}
+.barra-color:nth-child(5){
+    background-color: #fef200;
+    animation-delay: 1.2s;
+}
+.barra-color:nth-child(6){
+    background-color: #ff8800;
+    animation-delay: 1.5s;
+}
+.barra-color:nth-child(7){
+    background-color: #ff0012;
+    animation-delay: 1.8s;
+}
+@keyframes movimiento{ /*Animacion de movimiento de abajo a arriba*/
+	from{
+		top: 0;
+	}
+	to{
+		top: -100%;
+	}
+}
+/* TERIMINA EFECTO DE ENTRADA CON BARRAS DE COLORES */
+
+/* NAVEGADOR DE PAGINAS INTERNAS*/
+.interna{
+    display: flex;
+    justify-content: space-between; /*División equitativa a los extremos del navegador de las internas*/
+    align-items: center;
+}
+.interna nav ul{
+    width: 100%; /*Ocupa todo el ancho de la pantalla*/
+	list-style: none;
+    display: flex;
+}
+.interna nav a{
+	display: block;
+	font-weight: 500;
+	text-transform: uppercase; /*Transformados todos a mayúsculas*/
+	text-decoration: none;
+	color: #fff;
+}
+.interna nav a:hover{
+	color: rgb(255, 0, 0); /*Efecto HOVER a rojo*/
+}
+.interna nav li{
+	font-size: 1.5em;
+}
+.interna nav ul :not(:last-child){
+	margin-right: 40px;
+}
+.interna button{
+	-webkit-appearance:none; /*Configuración inicial de los botones sin efectos predeterminados*/
+	appearance:none; /*Configuración inicial de los botones sin efectos predeterminados*/
+    border: transparent; /*Configuración inicial de los botones sin efectos predeterminados*/
+}
+.abrir-menu,.cerrar-menu{
+	display: none; /*Clases utilizadas para abrir y cerrar el menú desplegable en la versión responsive*/
+}
+/* AQUÍ TERMINA EL NAVEGADOR DE LAS PÁGINAS INTERNA*/
+
+
+/* AQUÍ EMPIEZA LA BIOGRAFÍA */
+
+.contenedor-biografia .navegar-bio{
+    position: fixed;
+	z-index: 0; /* Posicionado por encima de las secciones pero por debajo del navegador */
+	top: calc(50vh - 125px); /* Posición fija del navegador de la interna BIOGRAFÍA */
+	left: 0;
+}
+.navegar-bio ul{
+    height: 250px; 
+	display: flex;
+	list-style: none; 
+	flex-direction: column; /* Organizado en una sola columna, uno debajo del otro */
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.navegar-bio a{
+	display: block;
+	padding: 10px 20px; /*  Padding para darle un tamaño a los elementos*/
+	text-decoration: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: rgb(255, 0, 0);
+    font-weight: 700;
+	border-radius: 0 5px 5px 0;
+	transition:padding-left 0.8s; /* Transición al hacer click */
+}
+.navegar-bio a:hover{
+	padding-left: 45px;
+}
+.contenedor-biografia section{
+	height: 100vh; /* Utilizo todo el algo de la página para las secciones */
+	position: relative;
+    display: flex; /* Contenido centrado */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: -1; /* Posicionado por debo del navegador y por debajo de la cabecera */
+}
+.contenedor-biografia section:nth-child(2){
+    background: url('../img/fondo-bio1.jpg') no-repeat center; /* Fondos distintos por seccion */
+}
+.contenedor-biografia section:nth-child(3){ /* Fondos distintos por seccion */
+    background: url('../img/fondo-bio2.png') repeat left;
+    justify-content: space-evenly;
+    background-attachment: fixed;
+}
+.contenedor-biografia section:nth-child(4){ /* Fondos distintos por seccion */
+    background: url('../img/fondo-bio3.jpg') no-repeat center;
+}
+.contenedor-biografia section:nth-child(5){ /* Fondos distintos por seccion */
+    background-color: white;
+}
+.contenedor-biografia p{ /* Configuración del texto como caja contenedora */
+    filter:none;
+    display: block;
+    width: 50%;
+    font-weight: 300;
+    background-color: rgba(0, 0, 0,.8);
+    text-align: center;
+    line-height: 1.5em;
+    padding: 25px;
+    border-radius: 10px;
+    animation: Aparecer 2s; /* Animación para los textos */
+}
+.contenedor-biografia span{
+    font-weight: 700; /* Texto destacado */
+}
+.contenedor-biografia img{ /* Configuración para la imagen en biografía 2 */
+    display: block;
+    border-radius: 10px;
+    width: 100%;
+}
+.contenedor-biografia picture{ /* Configuración para la imagen en biografía 2 */
+    border: 5px solid rgba(0, 0, 0,.8);
+    border-radius: 10px;
+    width: 380px;
+    display: block;
+}
+.contenedor-biografia h3{
+    color: #000000;
+    width: 75%;
+    text-align: center;
+    background: url('../img/fondo-bio4.jpg') no-repeat center; /* Fondo para el texto de la seccion 4 de la biografía */
+    background-size: cover;
+    font-size: 4.8em;
+    text-transform: uppercase; 
+}
+.contenedor-biografia h3 span{
+    display: block;
+	background-color: white;
+	mix-blend-mode: screen; /* Juego de filtros para la seccion 4 de la biografía */
+}
+/* AQUÍ TERMINA LA BIOGRAFÍA */
+
+/* AQUÍ EMPIEZA LA DISCOGRAFÍA */
+.contenedor-discografia{
+	min-height: 100vh; /* Alto mínimo que se rompe dependiendo de la altura del contenido */
+	display: flex;
+	justify-content: center; /* Contenido centrado en la pantalla */
+	align-items: center;
+	background-color: #111111;
+}
+.discos{
+    display: none;  /* Desactivado. Se activa con una funcion en JS */
+    flex-direction: column; /* Contenedor del disco individual con el contenido en columna */
+    justify-content: space-evenly; 
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    height: 800px;
+    width: 90%;
+    margin-top: 60px;
+    border-radius: 15px;
+    animation: Aparecer 2s; /* Transición cuando aparece cada contenedor */
+}
+.uno{
+    background: url('../img/fondo-1.png') no-repeat center; /* Fondo para cada disco */
+}
+.dos{
+    background: url('../img/fondo-2.png') no-repeat center;
+}
+.tres{
+    background: url('../img/fondo-3.png') no-repeat center;
+}
+.cuatro{
+    background: url('../img/fondo-4.png') no-repeat center;
+}
+.cinco{
+    background: url('../img/fondo-5.png') no-repeat center;
+}
+.seis{
+    background: url('../img/fondo-6.png') no-repeat center;
+}
+.siete{
+    background: url('../img/fondo-7.png') no-repeat center;
+}
+.ocho{
+    background: url('../img/fondo-8.png') no-repeat center;
+}
+.nueve{
+    background: url('../img/fondo-9.png') no-repeat center;
+}
+.verdisco{
+    display: flex; /* Activado. Se activa con una funcion en JS */
+}
+.discos img,
+.discos picture{ /* Configuración imagenes y picture de cada disco */
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.discos .cuadro-discos{ /* Disco individual con nombre y descripción */
+    width: 300px;
+    height: 400px;
+    background-color: #000000;
+    opacity: 0.9;
+    border-radius: 15px; 
+    padding: 25px;
+    overflow: hidden; /* Se utiliza para ocultar el texto descriptivo que entra en el HOVER */
+    position: relative;
+    animation: crecerDisco 1s ease 0.5s; /* Animación para la entrada de los discos individuales */
+    animation-fill-mode: backwards; /* Último fotograma activo */
+    
+}
+@keyframes crecerDisco { /* Animación para la entrada de los discos individuales */
+    from{
+        opacity: 0;
+        transform: scale(1, 0.9);
+        transform-origin: 50% 100%;
+    }
+    to{
+        opacity: 0.9;
+        transform: scale(1,1);
+        transform-origin: 50% 100%;
+    }
+}
+@keyframes Aparecer { /* Animación cuando aparece cada contenedor */
+    from{
+        opacity: 0;
+        transform: scale(0.9, 0.9);
+        transform-origin: 50% 50%;
+    }
+    to{
+        opacity: 1;
+        transform: scale(1, 1);
+        transform-origin: 50% 50%;
+    }
+}
+.cuadro-discos :nth-child(3){ /* Transición cuando aparece cada contenedor */
+    margin-bottom: 15px;
+}
+.cuadro-discos h2{
+    font-weight: 900; 
+    font-size: 1.4em; /* Nombre del Disco */
+}
+.cuadro-discos h3{
+    font-weight: 200; /* Leyenda del Disco */
+    font-size: 1em;
+}
+.texto-album{ /* Contenedor descripción del Disco, entra con una animación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 20px;
+    width: calc(80% - 20px);
+    height: 100%;
+    background-color: rgba(0, 0, 0,.9);
+    position: absolute; /* Posicionada sobre la caja del disco individual*/
+    top: -100%; 
+    transition: top 0.8s; /* Animación de entrada con HOVER*/
+}
+.cuadro-discos:hover .texto-album{
+    top: 0px; /* Animación de entrada con HOVER*/
+}
+.discos button{ /* Boton para que aparezca otro album RANDOM*/
+    -webkit-appearance:none;
+	appearance: none;
+	border: none; /* Configuración inicial boton*/
+	background-color: rgb(0, 0, 0);
+    opacity: 0.8;
+    border-radius: 5px;
+    display: block;
+    padding: 10px 30px;
+	color: rgb(255, 0, 0);
+	font-size: 1.2em;
+    font-family: 'Space Grotesk', sans-serif; 
+    font-weight: 700;
+	cursor: pointer;
+    animation: Aparecer 1s ease 1s; /* Animación del boton para que aparezca otro album RANDOM*/
+    animation-fill-mode: backwards; /* Conservar último fotograma activo */
+}
+.discos button:hover{
+    background-color: rgb(255, 0, 0); /* Animación HOVER del boton album RANDOM*/
+	color: rgb(0, 0, 0);
+}
+
+/* AQUÍ TERMINA LA DISCOGRAFÍA */
+
+
+/* AQUÍ EMPIEZA LA GALERÍA */
+
+.contenedor-galeria{ 
+    min-height: 100vh; /* Galería ocupa toda la pantalla, según contenido*/
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Galería centrada al medio de la pantalla*/
+	background-color: #111111;
+}
+.galeria{
+    margin: 120px 0px 60px 0px;
+    padding: 20px 0px;
+	width: 700px;
+	display: grid; /* Distribuido como GRID */
+	grid-template-columns: repeat(3, auto);  /* Distribuido como GRID de 3 columnas y filas automaticas según contenido*/
+	gap: 15px;
+}
+.galeria a{
+	display: block;
+}
+.galeria img{
+	display: block;  /* Configuración para todas las imagenes de la galería*/
+	width: 100%;
+	filter: grayscale(100%);  /* Efecto blanco y negro */
+	transition: filter 0.7s;
+}
+.galeria img:hover{
+	filter: grayscale(0%); /* Efecto blanco y negro a color HOVER */
+}
+.modal{
+	position: fixed; /* Se activa con una función esta posicionado cubriendo toda la pantalla */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgb(0, 0, 0);
+	display: none; /* Desactivado se activa con un click en JS */
+	justify-content: center;
+	align-items: center;
+    z-index: 1; /* Esta posicionado sobre la galería */
+}
+.visible{
+	display: flex; /* Clase para activar con un click en JS */
+}
+.modal button{
+	-webkit-appearance:none; /* Configuración inicial de las flechas del MODAL */
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	color: rgba(255, 0, 0);
+	font-family: 'Rubik 80s Fade', cursive;
+	font-size: 5em;
+	display: block;
+	margin: 0px 100px;
+	cursor: pointer;
+}
+.modal img{ /* Configuración inicial de las imagenes FullScreen del MODAL */
+	width: 600px;
+	display: block; 
+}
+/* AQUÍ TERMINA LA WEB DESKTOP */
+
+/* AQUÍ EMPIEZAN LOS MEDIA SCREEN PARA HACER EL DISEÑO RESPONSIVE */
+
+@media screen and (max-width: 1500px){ /* PARA PANTALLAS DE DESKTOP PEQUEÑAS*/
+    h1{
+        font-size: 2.2em; /* Cambio de tamaño título*/
+    }
+    header{
+        width: calc(100% - 30px); /* Cambio padding del header por lo tanto cambia el ancho total*/
+        padding: 15px;
+    }
+    header .logo{
+        width: 38px; 
+    }
+	.principal nav a{
+	    font-size: 2.8em;
+	}
+    .principal nav span{
+        right: 20px; /* Cambio posicionamiento del texto dentro de los elementos del navegador*/
+        bottom: 20px;
+    }
+    .contenedor-biografia h3{
+        font-size: 4em;
+    }
+    .contenedor-discografia{
+        height: 100%;
+    }
+    .discos{
+        height: 740px;
+    }
+}
+@media screen and (max-width: 1200px){ /* PARA TABLETS DE ALTA DEFINICIÓN*/
+	.principal nav a{ /* Ajustando tamaños*/
+	    font-size: 2.2em;
+        min-height: 600px
+	}
+    .principal nav span{
+        right: 20px;
+        bottom: 10px;
+    }
+    .principal nav ul{ /* Ajustando la imagen de fondo*/
+        background-size: 80%;
+    }
+    .principal nav a:hover{
+        background-size: cover; /* Ajustando la imagen de fondo*/
+    }
+    .interna nav a{ /* Ajustando tamaños*/
+        font-size: 0.8em;
+    }
+    .contenedor-biografia section:nth-child(3){ /* Cambio en la orientación del contenido de la sección 3 de la biografía*/
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contenedor-biografia picture{ /* Ajustando tamaños*/
+        margin: 40px 0px;
+        width: 43%;
+    }
+    .discos .cuadro-discos{ /* Ajustando tamaños*/
+        width: 260px;
+        height: 340px;
+    }
+    .galeria{ /* Ajustando tamaños*/
+        width: 650px;
+    }
+    .modal button{ /* Ajustando margenes*/
+        margin: 0px 50px;
+    }
+    .uno,
+    .dos,
+    .tres,
+    .cuatro,
+    .cinco,
+    .seis,
+    .siete,
+    .ocho,
+    .nueve{
+        background-size: cover; /* Ajustando la imagen de fondo*/
+    }
+}
+@media screen and (max-width: 950px){ /* PARA TABLETS*/
+    .principal nav ul{
+        flex-direction: column; /* Cambio de orientaión del flex a columnas*/
+        background: url('../img/Logo-central-diagonal.png') no-repeat center; /* Cambio de logo del fondo*/
+        background-size: 95%; 
+        width: 100%; /* Ajustando tamaños*/
+        height: 80%; /* Ajustando tamaños*/
+        padding: 100px 0px 0px 0px;
+    }
+    .principal nav a{
+        font-size: 3.5em; /* Ajustando tamaños*/
+        width: 90vw; /* Ajustando tamaños*/
+        height: 100%;
+        min-height: 0px;
+    }
+    .principal nav a:hover{
+        opacity: 0.9;
+        border-radius: 10px; /* Cambios en los bordes*/
+        background-size: cover;
+        mix-blend-mode: normal;
+    }
+    .principal nav span{
+        right: 10px; /* Ajustando de posicionamiento*/
+        bottom: 10px;
+    }
+    .principal nav li:first-child a{
+        border-radius: 10px;  /* Cambios en los bordes*/
+    }
+    .principal nav li:nth-child(2) a:hover{
+        background: url('../img/pink-floyd-scaled-v2.jpg') no-repeat center; /* Cambio de fondo del 2do elemento*/
+        background-size: cover;
+    }
+    .principal nav li:last-child a{
+        border-radius: 10px;
+    }
+    .principal nav li:last-child a:hover{
+        background: url('../img/pink-floyd-scaled-v3.jpg') no-repeat bottom; /* Cambio de fondo del 3er elemento*/
+        background-size: cover;
+    }
+    /* ENTRADA FRANJAS HORIZONTALES*/
+    .entrada{
+        flex-direction: column; /* Cambio de orientación de las franjas en la entrada */
+        height: 100vh; /* Ajustando tamaños*/
+        width: 100vw; /* Ajustando tamaños*/
+        animation: movimientoHorizontal .5s ; /* Cambio de animación de las franjas en la entrada */
+        animation-delay: 3.8s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+    }
+    .entrada .barra-color{
+        width: 100%;
+        height: calc(100vh / 7); /* Cambio de tamaños de las franjas en la entrada ahora horizontales*/
+        animation: movimientoHorizontal 2s ease-in-out;
+        animation-fill-mode: forwards;      
+    }
+    .entrada .barra-color:nth-child(1){ /* Delay diferente para cada franja entrada ahora horizontales*/
+        animation-delay: 0s;
+    }
+    .entrada .barra-color:nth-child(2){
+        animation-delay: 0.3s;
+    }
+    .entrada .barra-color:nth-child(3){
+        animation-delay: 0.6s;
+    }
+    .entrada .barra-color:nth-child(4){
+        animation-delay: 0.9s;
+    }
+    .entrada .barra-color:nth-child(5){
+        animation-delay: 1.2s;
+    }
+    .entrada .barra-color:nth-child(6){
+        animation-delay: 1.5s;
+    }
+    .entrada .barra-color:nth-child(7){
+        animation-delay: 1.8s;
+    }
+    @keyframes movimientoHorizontal{ /* Animación de las franjas en la entrada */
+        from{
+            left: 0;
+        }
+        to{
+            left: -100%;
+        }
+    }
+    /* TERMINA LA ENTRADA FRANJAS HORIZONTALES*/
+    /*CAMBIOS EN LA BIOGRAFÍA*/
+    .contenedor-biografia p{
+        width: 65%; /* Ajustando tamaños*/
+    }
+    .contenedor-biografia picture{
+        margin: 30px 0px; 
+        width: 50%; /* Ajustando tamaños*/
+    }
+    .contenedor-biografia h3{
+        font-size: 3em; /* Ajustando tamaños*/
+        width: 75%;
+    }
+    /* FIN CAMBIOS EN LA BIOGRAFÍA*/
+    /*CAMBIOS EN LA DISCOGRAFÍA*/
+    .discos{
+        height: 740px; /* Ajustando tamaños*/
+    }
+    .discos .cuadro-discos{
+        width: 280px; /* Ajustando tamaños*/
+        height: 380px;
+    }
+    .texto-album{
+        padding: 0px 20px; /* Ajustando tamaños*/
+        width: calc(80% - 20px);
+        height: 100%;
+        top: -100%;
+    }
+    .cuadro-discos picture{
+        margin-bottom: 30px;
+    }
+    .cuadro-discos h2{
+        font-size: 1.3em;
+    }
+    .cuadro-discos h3{
+        font-size: 0.9em;
+    }
+    /*FIN DE CAMBIOS EN LA DISCOGRAFÍA*/
+    /*CAMBIOS EN LA GALERIA*/
+    .galeria{
+        width: 550px; /* Ajustando tamaños*/
+        grid-template-columns: repeat(2, auto); /* Cambio en las columnas, ahora son 2 columnas y filas automaticas*/
+    }
+    .modal button{
+        margin: 0px 20px; /* Ajustando tamaños*/
+        font-size: 2.5em; /* Ajustando tamaños*/
+    }
+    .modal img{
+        width: 60%; /* Ajustando tamaños*/
+        display: block; 
+    }
+    /*FIN DE CAMBIOS EN LA GALERIA*/
+}
+@media screen and (max-width: 950px) and (max-height: 420px){ /* SOLO PARA MOVILES EN POSICIÓN HORIZONTAL*/
+    h1{
+        padding: 0px;
+    }
+    .principal nav ul{
+        flex-direction: row; /* Ajustando dirección del flex*/
+        justify-content: center;
+        background: transparent;
+        height: calc(100% - 90px); /* Ajustando tamaños*/
+        padding: 90px 10px 0px 10px; /* Ajustando tamaños*/
+    }
+    .principal nav ul li{
+        flex-grow: 0;
+    }
+    .principal nav a{
+        font-size: 1.7em;
+        width: 30vw; /* Ajustando tamaños*/
+        height: 70vh; /* Ajustando tamaños*/
+    }
+    .principal nav li{
+        opacity: 1; /* Elementos visibles sin HOVER*/
+    }
+    .principal nav a:hover{ /* Desactivando el HOVER*/
+        color: transparent; 
+        background: transparent;
+        background-position: center;
+    }
+    .principal nav li:first-child a{ 
+        border-radius: 10px;
+        background: url('../img/pink-floyd-scaled.jpg') no-repeat center; /* Cambios en el fondo del primer elemento del nav*/
+        background-size: cover;
+        opacity: 1; /* Visible sin HOVER en el primer elemento del nav*/
+    }
+    .principal nav li:first-child a:hover {
+        background-position: center;
+    }
+    .principal nav li:nth-child(2) a{
+        border-radius: 10px;
+        background: url('../img/pink-floyd-scaled-v2.jpg') no-repeat center; /* Cambios en el fondo del segundo elemento del nav*/
+        background-size: cover;
+        margin: 0px 20px; /* Ajustando margen entre elementos*/
+        opacity: 1;
+    }
+    .principal nav li:last-child a{
+        border-radius: 10px;
+        background: url('../img/pink-floyd-scaled-v3.jpg') no-repeat center; /* Cambios en el fondo del tercer elemento del nav*/
+        background-size: cover;
+        opacity: 1;
+    }
+    .principal nav span{
+        opacity: 1; /* Visible sin HOVER en los titulos del nav*/
+        color: #fff;
+    }
+    .interna{
+        padding: 10px 15px; /* Ajustando tamaños del header página INTERNA*/
+    }
+    .contenedor-biografia .navegar-bio {
+        display: none; /* Eliminando navegador de la biografía */
+    }
+    .contenedor-biografia{
+        z-index: 0;
+    }
+    .contenedor-biografia p{
+        width: 75%; /* Ajustando tamaños*/
+        font-size: 0.8em;
+        padding: 15px;
+        line-height: 1.3em;
+    }
+    .contenedor-biografia section:nth-child(2),
+    .contenedor-biografia section:nth-child(3),
+    .contenedor-biografia section:nth-child(4){
+        background-size: cover;
+    }
+    .contenedor-biografia section:nth-child(4) p{
+        width: 65%; /* Ajustando tamaños*/
+    }
+    .contenedor-biografia picture{
+        display: none; /* Eliminando una foto de la biografía */
+    }
+    .contenedor-biografia h3{
+        font-size: 2em;
+        width: 75%; /* Ajustando tamaños*/
+    }
+    .discos{
+        margin: 90px 0px 30px 0px;
+        height: 560px; /* Ajustando tamaños*/
+    }
+}
+@media screen and (max-width:800px){ /* AQUÍ CAMBIA EL NAVEGADOR A UN BOTON DE MENÚ DESPLEGABLE*/
+
+	.interna nav{ /* Configurando menu desplegable*/
+		position: fixed;
+		top: -100vh; /* Escondido para luego ser animado con una transición*/
+		left: 0;
+		padding: 20px;
+		width: calc(100% - 40px);
+		height: calc(100vh - 40px);
+        z-index: 1; /* Menu desplegable por encima de todo*/
+		background-color: rgb(255, 0, 0);
+		transition: top 0.8s; /* Animación para que el menú entre*/
+	}
+	.interna .desplegado{ /* Clases para que el menú se despliege, utiliza una funcion en .JS*/
+		top: 0;
+	}
+	.interna nav ul{
+		display: flex; /* Configurando menu desplegable*/
+        height: calc(100vh - 40px); 
+        flex-direction: column; /* Configurando de columnas centrdas*/
+        justify-content: center;
+        align-items: center;
+
+	}
+	.interna nav li:not(:last-child){
+		margin-right: 0px;
+	}
+	.interna nav li:not(:first-child){
+		margin-top: 20px;
+	}
+	.interna nav a{
+		color: #000;
+		font-size: 1.5em;
+	}
+    .interna nav a:hover{
+		color: #fff;
+        text-decoration: line-through; /* Decoración*/
+	}
+	.cerrar-menu{ /* Boton cerrar aplica un función de .JS*/
+		display: block;
+		border: none;
+		background-color: transparent;
+		color: #000000;
+		text-transform: uppercase;
+		font-size: 2.5em;
+		position: absolute; /* Posicionado en absoluto en la esquina superior derecha*/
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+	}
+	.abrir-menu{ /* Boton abrir aplica un función de .JS*/
+		display: block;
+		background-color: transparent;
+		border-radius: 5px;
+		width: 40px;
+		padding: 5px 5px 0px;
+		cursor: pointer;
+	}
+	.abrir-menu span{ /* Icono del menú desplegable hecho con spans*/
+		display: block;
+		height: 4px;
+		background-color: rgb(255, 0, 0);
+		margin-bottom: 5px;
+	}
+}
+
+@media screen and (max-width: 600px){ /* PARA MÓVILES */
+    header{
+        justify-content: center; /* Contenido cabecera centrado*/
+        padding: 5px 20px;
+    }
+    header .logo{ /* Ajustes en el nuevo logo que cambia con el PICTURE*/
+        width: 180px;
+        margin-right: 0px;
+        height: 85%;
+        filter: grayscale(0%); /* Sin efecto blanco y negro*/
+    }
+    header h1{
+        display: none; /* Desactiva el título h1*/
+    }
+
+    .principal nav a{
+        font-size: 2em; /* Ajustando tamaños*/
+    }
+    .principal h1{
+        font-size: 1.8em;
+    }
+    
+    .principal nav ul{
+        background: transparent; /* Desactivando el fondo en transparente*/
+        padding: 130px 0px 0px 0px; /* Ajustando tamaños*/
+    }
+    .principal nav li{
+        margin-bottom: 25px;/* Ajustando tamaños*/
+        opacity: 1;
+    }
+    .principal nav li:first-child a{ /* Cambio en el primer elemento del nav*/
+        border-radius: 10px;
+        background: url('../img/pink-floyd-scaled.jpg') no-repeat center;
+        background-size: cover;
+        opacity: 1;
+    }
+    .principal nav li:nth-child(2) a{ /* Cambio en el segundo elemento del nav*/
+        border-radius: 10px;
+        background: url('../img/pink-floyd-scaled-v2.jpg') no-repeat center;
+        background-size: cover;
+        opacity: 1;
+    }
+    .principal nav li:last-child a{ /* Cambio en el tercer elemento del nav*/
+        border-radius: 10px;
+        background: url('../img/pink-floyd-scaled-v3.jpg') no-repeat center;
+        background-size: cover;
+        opacity: 1;
+    }
+    .principal nav span{
+        opacity: 1;
+        color: #fff;
+    }
+    .principal nav a:hover{ /* Descactivando HOVER*/
+        color: transparent;
+        background: transparent;
+        background-position: center;
+    }
+    .interna{
+        padding: 10px 20px; /* Ajuste de tamaños en la cabecera de las páginas internas*/
+        width: calc(100% - 40px);
+    }
+    .interna .logo{ 
+        width: 38px; /* Ajuste de tamaños*/
+        margin-right: 0px;
+        filter: grayscale(0%);
+    }
+    /*CAMBIOS EN LA BIOGRAFÍA */
+    .contenedor-biografia .navegar-bio{
+        top: 250px; /* Ajuste de posición*/
+        left: 0;
+    }
+    .navegar-bio ul{
+        height: 200px; /* Ajuste de tamaños*/
+    }
+    .navegar-bio a{
+        padding: 10px 10px; /* Ajuste de tamaños*/
+        border-radius: 0 5px 5px 0;
+    }
+    .navegar-bio a:hover{
+        padding-left: 20px; /* Ajuste de tamaños*/
+    }
+    .contenedor-biografia p{
+        width: 60%;
+        font-size: 0.8em;
+        padding: 10px;
+        line-height: 1.3em;
+    }
+    .contenedor-biografia section:nth-child(2),
+    .contenedor-biografia section:nth-child(3),
+    .contenedor-biografia section:nth-child(4){
+        background-size: cover;
+    }
+    .contenedor-biografia section:nth-child(4) p{
+        width: 65%; /* Ajuste de tamaños*/
+    }
+    .contenedor-biografia picture{
+        margin: 25px 0px; /* Ajuste de tamaños*/
+        width: 62%;
+    }
+    .contenedor-biografia h3{
+        font-size: 2em; /* Ajuste de tamaños*/
+        width: 75%;
+    }
+    /*FIN DE CAMBIOS EN LA GALERIA */
+    /*CAMBIOS EN LA DISCOGRAFÍA */
+    .discos{
+        height: 560px; /* Ajuste de tamaños*/
+    }
+    .discos .cuadro-discos{
+        border-radius: 10px; /* Ajuste de tamaños*/
+        padding: 15px;
+        width: 260px;
+        height: 340px;
+    }
+    .cuadro-discos:hover .texto-album{
+        top: 0;
+        width: calc(90% - 40px); /* Ajuste de tamaños*/
+    }
+    .discos .texto-album{
+        font-size: 0.7em; /* Ajuste de tamaños*/
+    }
+    .cuadro-discos picture{
+        margin-bottom: 15px; /* Ajuste de tamaños*/
+    }
+    .cuadro-discos h2{
+        font-size: 0.9em;/* Ajuste de tamaños*/
+    }
+    .cuadro-discos h3{
+        font-size: 0.6em;
+    }
+    /*FIN DE CAMBIOS EN LA DISCOGRAFÍA */
+    /*CAMBIOS EN LA GALERIA */
+    .contenedor-galeria{
+        height: 100%;
+        padding: 80px 0px; /* Ajuste de tamaños*/
+    }
+    .galeria{
+        margin: 30px 0px 30px 0px; /* Ajuste de tamaños*/
+        width: 340px;
+        grid-template-columns: repeat(1, auto); /* Cambia el GRID a una sola columna, con filas automaticas*/
+    }
+    .modal{
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .modal button{
+        margin: 0px 10px; /* Ajuste de tamaños*/
+        font-size: 2em;
+    }
+    .modal img{
+        width: 36vh; /* Ajuste de tamaños*/
+        display: block;
+    }
+    /*FIN DE CAMBIOS EN LA GALERIA*/
+}
+@media screen and (max-width: 330px){
+    .contenedor-biografia picture{
+        display: none; /* Desaparece la imagen de biografía */ 
+    }
+    .contenedor-biografia p {
+        width: 72%; /* Ajuste de tamaños*/
+    }
+    .contenedor-biografia h3 {
+        font-size: 1.6em; /* Ajuste de tamaños*/
+    }
+    .discos .cuadro-discos {
+        width: 240px;/* Ajuste de tamaños*/
+        height: 310px;
+    }
+}
+
+
