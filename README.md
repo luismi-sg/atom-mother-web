@@ -1,6 +1,6 @@
 # Tribute Pink Floyd - Responsive Web
 
-This is a replica of Netflix's Interface with a Login System on a BBDD (CRUD)
+This is a Responsive Web made as a Tribute for one of my favorites Bands. Pink Floyd.
 
 ## Live Web
 
@@ -21,12 +21,14 @@ Cloud - Server:
 <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
 
 
-## Development & Design
+## What I Learned
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+✅ Use of HTML and CSS
 
-Please make sure to update tests as appropriate.
+✅ Responsive Design - Mobile First Design
+
+✅ Deploy on Netlify
+
 
 ## License
 
